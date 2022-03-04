@@ -45,7 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Canary Dashboard.Core\Canary Dashboard.Core.csproj" />
+    <ProjectReference Include="..\Canary Dashboard.Core\CanaryDashboard.Core.csproj" />
     <ProjectReference Include="..\CanaryDataGrid.Module\CanaryDataGrid.Module.csproj" />
   </ItemGroup>
 

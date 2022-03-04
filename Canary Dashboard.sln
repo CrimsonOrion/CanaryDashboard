@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4164F3BE-C58D-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{0B5972F4-FC1D-4E6A-88F7-7B28FF94F3F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canary Dashboard.UI", "Canary Dashboard.UI\Canary Dashboard.UI.csproj", "{C7EFA941-FA4C-4743-9622-54C326F172D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CanaryDashboard.UI", "Canary Dashboard.UI\CanaryDashboard.UI.csproj", "{C7EFA941-FA4C-4743-9622-54C326F172D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canary Dashboard.Core", "Canary Dashboard.Core\Canary Dashboard.Core.csproj", "{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CanaryDashboard.Core", "Canary Dashboard.Core\CanaryDashboard.Core.csproj", "{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CanaryDataGrid.Module", "CanaryDataGrid.Module\CanaryDataGrid.Module.csproj", "{DC67B7D6-A954-4487-9822-B847A54A8BC4}"
 EndProject
