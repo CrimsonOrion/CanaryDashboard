@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/Tester
+/Canary Dashboard.UI/appSettings.dev.json
