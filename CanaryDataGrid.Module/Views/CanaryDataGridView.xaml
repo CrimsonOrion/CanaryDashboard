@@ -1,0 +1,100 @@
+﻿<UserControl
+    x:Class="CanaryDataGrid.Module.Views.CanaryDataGridView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CanaryDataGrid.Module.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="500" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Row 0  -->
+        <Button
+            x:Name="LoadCanariesButton"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="5"
+            Padding="5"
+            Command="{Binding LoadCommand}"
+            Content="Load Canaries"
+            FontSize="14"
+            IsDefault="True"
+            Style="{DynamicResource MahApps.Styles.Button}"
+            TabIndex="2" />
+
+        <ContentControl
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="5"
+            prism:RegionManager.RegionName="DetailsRegion" />
+
+        <!--  Row 1  -->
+        <DataGrid
+            x:Name="ServiceOrdersDataGrid"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            FontFamily="Segou UI"
+            FontSize="{Binding FontSize}"
+            GridLinesVisibility="Vertical"
+            HorizontalScrollBarVisibility="Visible"
+            IsReadOnly="True"
+            IsTabStop="False"
+            ItemsSource="{Binding CanaryBaseList}"
+            SelectedItem="{Binding SelectedCanary}"
+            VerticalScrollBarVisibility="Visible">
+
+            <!--  Datagrid Style options  -->
+            <DataGrid.Style>
+                <Style BasedOn="{StaticResource MahApps.Styles.DataGrid}" TargetType="{x:Type DataGrid}">
+                    <Setter Property="AlternatingRowBackground" Value="{DynamicResource MahApps.Brushes.Gray10}" />
+                </Style>
+            </DataGrid.Style>
+
+            <!--  Set Column Header Style  -->
+            <DataGrid.ColumnHeaderStyle>
+                <Style BasedOn="{StaticResource MahApps.Styles.DataGridColumnHeader}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <TextBlock
+                                    FontSize="14"
+                                    Text="{Binding}"
+                                    TextWrapping="WrapWithOverflow" />
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <!--  Columns  -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Path=Timestamp}" Header="Timestamp" />
+                <DataGridTextColumn Binding="{Binding Path=SourceIP}" Header="Source IP" />
+                <DataGridTextColumn Binding="{Binding Path=Organization}" Header="Organization" />
+                <DataGridTextColumn Binding="{Binding Path=InputChannel}" Header="Input Channel" />
+                <DataGridTextColumn Binding="{Binding Path=City}" Header="City" />
+                <DataGridTextColumn Binding="{Binding Path=State}" Header="State" />
+                <DataGridTextColumn Binding="{Binding Path=Zip}" Header="Zip" />
+                <DataGridTextColumn Binding="{Binding Path=Country}" Header="Country" />
+                <DataGridTextColumn Binding="{Binding Path=Latitude}" Header="Latitude" />
+                <DataGridTextColumn Binding="{Binding Path=Longitude}" Header="Longitude" />
+                <DataGridCheckBoxColumn Binding="{Binding Path=IsTorRelay}" Header="Is Tor Relay" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
