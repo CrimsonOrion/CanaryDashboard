@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Canary_Dashboard.UI</RootNamespace>
+    <Nullable>annotations</Nullable>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Canary Dashboard</AssemblyName>
+    <ApplicationIcon>CanaryThinkst.ico</ApplicationIcon>
+    <Authors>James Lynch</Authors>
+    <Company>Carteret-Craven Electric Cooperative</Company>
+    <Copyright>2022</Copyright>
+    <PackageIcon>ico_canary.png</PackageIcon>
+    <Version>2022.3.4.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appSettings.dev.json" />
+    <None Remove="appSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appSettings.dev.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CanaryThinkst.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Images\Icons\ico_canary.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Canary Dashboard.Core\Canary Dashboard.Core.csproj" />
+    <ProjectReference Include="..\CanaryDataGrid.Module\CanaryDataGrid.Module.csproj" />
+  </ItemGroup>
+
+</Project>

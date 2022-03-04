@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{A620F62C-960D-4E6E-9DC0-B5DA5DB691A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4164F3BE-C58D-46B9-883A-5D7228B494B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{0B5972F4-FC1D-4E6A-88F7-7B28FF94F3F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canary Dashboard.UI", "Canary Dashboard.UI\Canary Dashboard.UI.csproj", "{C7EFA941-FA4C-4743-9622-54C326F172D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canary Dashboard.Core", "Canary Dashboard.Core\Canary Dashboard.Core.csproj", "{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CanaryDataGrid.Module", "CanaryDataGrid.Module\CanaryDataGrid.Module.csproj", "{DC67B7D6-A954-4487-9822-B847A54A8BC4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tester", "Tester\Tester.csproj", "{9B3B9591-934A-40F7-AA50-A2E2D463402B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7EFA941-FA4C-4743-9622-54C326F172D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EFA941-FA4C-4743-9622-54C326F172D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EFA941-FA4C-4743-9622-54C326F172D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EFA941-FA4C-4743-9622-54C326F172D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC67B7D6-A954-4487-9822-B847A54A8BC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC67B7D6-A954-4487-9822-B847A54A8BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC67B7D6-A954-4487-9822-B847A54A8BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC67B7D6-A954-4487-9822-B847A54A8BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3B9591-934A-40F7-AA50-A2E2D463402B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3B9591-934A-40F7-AA50-A2E2D463402B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3B9591-934A-40F7-AA50-A2E2D463402B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3B9591-934A-40F7-AA50-A2E2D463402B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7EFA941-FA4C-4743-9622-54C326F172D8} = {4164F3BE-C58D-46B9-883A-5D7228B494B4}
+		{8CBEDDA5-5814-48BE-84F6-5BFC0E9BED92} = {A620F62C-960D-4E6E-9DC0-B5DA5DB691A5}
+		{DC67B7D6-A954-4487-9822-B847A54A8BC4} = {0B5972F4-FC1D-4E6A-88F7-7B28FF94F3F2}
+		{9B3B9591-934A-40F7-AA50-A2E2D463402B} = {4164F3BE-C58D-46B9-883A-5D7228B494B4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65F8167E-EB9B-4D3C-92A1-63B2252B8546}
+	EndGlobalSection
+EndGlobal
