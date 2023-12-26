@@ -2,7 +2,7 @@
 
 using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 
 using System.Diagnostics;
 
@@ -11,7 +11,7 @@ public class CanaryXlsxDetailViewModel : BindableBase, INavigationAware
 {
     #region Canary Xlsx Detail View Properties
 
-    private CanaryXlsxModel _canary;
+    private CanaryXlsxModel _canary = new();
     public CanaryXlsxModel Canary
     {
         get => _canary;

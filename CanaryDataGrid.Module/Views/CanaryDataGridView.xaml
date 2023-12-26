@@ -40,7 +40,7 @@
 
         <!--  Row 1  -->
         <DataGrid
-            x:Name="ServiceOrdersDataGrid"
+            x:Name="CanaryDataGrid"
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -48,7 +48,7 @@
             CanUserAddRows="False"
             CanUserDeleteRows="False"
             FontFamily="Segou UI"
-            FontSize="{Binding FontSize}"
+            FontSize="12"
             GridLinesVisibility="Vertical"
             HorizontalScrollBarVisibility="Visible"
             IsReadOnly="True"
@@ -83,6 +83,8 @@
             <!--  Columns  -->
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" />
+                <DataGridTextColumn Binding="{Binding Path=TokenType}" Header="Type" />
                 <DataGridTextColumn Binding="{Binding Path=Timestamp}" Header="Timestamp" />
                 <DataGridTextColumn Binding="{Binding Path=SourceIP}" Header="Source IP" />
                 <DataGridTextColumn Binding="{Binding Path=Organization}" Header="Organization" />
@@ -91,8 +93,7 @@
                 <DataGridTextColumn Binding="{Binding Path=State}" Header="State" />
                 <DataGridTextColumn Binding="{Binding Path=Zip}" Header="Zip" />
                 <DataGridTextColumn Binding="{Binding Path=Country}" Header="Country" />
-                <DataGridTextColumn Binding="{Binding Path=Latitude}" Header="Latitude" />
-                <DataGridTextColumn Binding="{Binding Path=Longitude}" Header="Longitude" />
+                <DataGridTextColumn Binding="{Binding Path=Coordinates}" Header="Coordinates" />
                 <DataGridCheckBoxColumn Binding="{Binding Path=IsTorRelay}" Header="Is Tor Relay" />
             </DataGrid.Columns>
         </DataGrid>

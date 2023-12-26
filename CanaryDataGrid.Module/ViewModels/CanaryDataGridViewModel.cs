@@ -5,57 +5,45 @@ using Canary_Dashboard.Core.Processors;
 
 using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Regions;
+using Prism.Navigation;
+using Prism.Navigation.Regions;
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace CanaryDataGrid.Module.ViewModels;
-public class CanaryDataGridViewModel : BindableBase, INavigationAware
+public class CanaryDataGridViewModel(IRegionManager regionManager, IAPIProcessor processor) : BindableBase, INavigationAware
 {
-    private readonly IRegionManager _regionManager;
-    private readonly IAPIProcessor _processor;
-
     #region Canary DataGrid View Properties
 
-    private ObservableCollection<ICanaryBaseModel> _canaryBaseList;
-    public ObservableCollection<ICanaryBaseModel> CanaryBaseList
+    private ObservableCollection<CanaryBaseModel> _canaryBaseList = [];
+    public ObservableCollection<CanaryBaseModel> CanaryBaseList
     {
         get => _canaryBaseList;
         set => SetProperty(ref _canaryBaseList, value);
     }
 
-    private ICanaryBaseModel _selectedCanary;
-    public ICanaryBaseModel SelectedCanary
+    private CanaryBaseModel _selectedCanary = new();
+    public CanaryBaseModel SelectedCanary
     {
         get => _selectedCanary;
         set
         {
-            SetProperty(ref _selectedCanary, value);
+            _ = SetProperty(ref _selectedCanary, value);
             DisplayDetails();
         }
     }
 
-    public List<CanaryDocxModel> CanaryDocxList { get; set; }
-    public List<CanaryXlsxModel> CanaryXlsxList { get; set; }
-    public List<CanaryFolderModel> CanaryFolderList { get; set; }
+    public List<CanaryDocxModel> CanaryDocxList { get; set; } = [];
+    public List<CanaryXlsxModel> CanaryXlsxList { get; set; } = [];
+    public List<CanaryFolderModel> CanaryFolderList { get; set; } = [];
 
     #endregion
 
     #region Delegate Commands
 
     public DelegateCommand LoadCommand => new(Load);
-
-    #endregion
-
-    #region Constructor
-
-    public CanaryDataGridViewModel(IRegionManager regionManager, IAPIProcessor processor)
-    {
-        _regionManager = regionManager;
-        _processor = processor;
-    }
 
     #endregion
 
@@ -73,38 +61,30 @@ public class CanaryDataGridViewModel : BindableBase, INavigationAware
 
     private async void Load()
     {
-        CanaryBaseList = new();
-        CanaryFolderList = new();
-        CanaryDocxList = new();
-        CanaryXlsxList = new();
-        List<CanaryJsonAPIModel> list = await _processor.GetCanaryListAsync(GlobalConfig.CanaryTokenConfiguration);
+        CanaryBaseList = [];
+        CanaryFolderList = [];
+        CanaryDocxList = [];
+        CanaryXlsxList = [];
+        List<CanaryAlarm> list = await processor.GetCanaryAlarmsAsync(GlobalConfig.CanaryTokenConfiguration);
         var id = 0;
-        foreach (CanaryJsonAPIModel alarm in list)
+        foreach (CanaryAlarm alarm in list)
         {
-            switch (alarm.InputChannel)
+            switch (alarm.HitInformation!.TokenType)
             {
-                case "DNS":
-                    CanaryFolderModel dataF = _processor.GetCanaryFolder(id, alarm);
-                    dataF.Type = "Folder";
+                case "windows_dir":
+                    CanaryFolderModel dataF = new(id, alarm);
                     CanaryFolderList.Add(dataF);
                     CanaryBaseList.Add(dataF);
                     break;
-                case "HTTP":
-                    GeoInfoModel geo = alarm.GeoInfo as GeoInfoModel;
-                    if (geo.Asn?.AsnNumber is not null)
-                    {
-                        CanaryXlsxModel dataX = _processor.GetCanaryXlsx(id, alarm);
-                        dataX.Type = "Xlsx";
-                        CanaryXlsxList.Add(dataX);
-                        CanaryBaseList.Add(dataX);
-                    }
-                    else
-                    {
-                        CanaryDocxModel dataD = _processor.GetCanaryDocx(id, alarm);
-                        dataD.Type = "Docx";
-                        CanaryDocxList.Add(dataD);
-                        CanaryBaseList.Add(dataD);
-                    }
+                case "ms_excel":
+                    CanaryXlsxModel dataX = new(id, alarm);
+                    CanaryXlsxList.Add(dataX);
+                    CanaryBaseList.Add(dataX);
+                    break;
+                case "ms_word":
+                    CanaryDocxModel dataD = new(id, alarm);
+                    CanaryDocxList.Add(dataD);
+                    CanaryBaseList.Add(dataD);
                     break;
             }
             id++;
@@ -113,24 +93,28 @@ public class CanaryDataGridViewModel : BindableBase, INavigationAware
 
     private void DisplayDetails()
     {
-        switch (SelectedCanary.Type)
+        if (SelectedCanary is null)
         {
-            case "Folder":
+            return;
+        }
+
+        switch (SelectedCanary.TokenType)
+        {
+            case "windows_dir":
                 Navigate(KnownViewNames.CanaryFolderDetailView, new() { { "canary", CanaryFolderList.FirstOrDefault(_ => _.ID == SelectedCanary.ID) } });
                 break;
-            case "Xlsx":
+            case "ms_excel":
                 Navigate(KnownViewNames.CanaryXlsxDetailView, new() { { "canary", CanaryXlsxList.FirstOrDefault(_ => _.ID == SelectedCanary.ID) } });
                 break;
-            case "Docx":
+            case "ms_word":
                 Navigate(KnownViewNames.CanaryDocxDetailView, new() { { "canary", CanaryDocxList.FirstOrDefault(_ => _.ID == SelectedCanary.ID) } });
                 break;
             default:
                 break;
         }
-
     }
 
-    private void Navigate(string navigationPath, NavigationParameters navigationParameters = null) => _regionManager.RequestNavigate(KnownRegionNames.DetailsRegion, navigationPath, navigationParameters);
+    private void Navigate(string navigationPath, NavigationParameters navigationParameters) => regionManager.RequestNavigate(KnownRegionNames.DetailsRegion, navigationPath, navigationParameters);
 
     #endregion
 

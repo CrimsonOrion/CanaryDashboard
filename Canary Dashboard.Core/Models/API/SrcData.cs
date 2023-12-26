@@ -1,14 +1,16 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace Canary_Dashboard.Core.Models;
-public class SrcDataModel
+
+public class SrcData
 {
     [JsonPropertyName("windows_desktopini_access_domain")]
-    public string AccessDomain { get; set; }
+    public string? WindowsDesktopiniAccessDomain { get; set; }
 
     [JsonPropertyName("windows_desktopini_access_hostname")]
-    public string AccessHostname { get; set; }
+    public string? WindowsDesktopiniAccessHostname { get; set; }
 
     [JsonPropertyName("windows_desktopini_access_username")]
-    public string AccessUsername { get; set; }
+    public string? WindowsDesktopiniAccessUsername { get; set; }
 }
+

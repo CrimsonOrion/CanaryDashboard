@@ -4,7 +4,7 @@ using CanaryDataGrid.Module.Views;
 
 using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 
 namespace CanaryDataGrid.Module;
 public class CanaryDataGridModule : IModule

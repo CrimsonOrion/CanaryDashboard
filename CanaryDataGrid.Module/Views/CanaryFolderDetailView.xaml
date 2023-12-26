@@ -35,7 +35,6 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -161,7 +160,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Access Info:" />
+            Text="Organization:" />
 
         <TextBlock
             Grid.Row="7"
@@ -169,7 +168,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.AccessInfo}" />
+            Text="{Binding Canary.Organization}" />
 
         <!--  Row 8  -->
         <TextBlock
@@ -178,7 +177,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Organization:" />
+            Text="Hostname:" />
 
         <TextBlock
             Grid.Row="8"
@@ -186,7 +185,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.Organization}" />
+            Text="{Binding Canary.Hostname}" />
 
         <!--  Row 9  -->
         <TextBlock
@@ -195,7 +194,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Hostname:" />
+            Text="IP:" />
 
         <TextBlock
             Grid.Row="9"
@@ -203,7 +202,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.Hostname}" />
+            Text="{Binding Canary.IP}" />
 
         <!--  Row 10  -->
         <TextBlock
@@ -212,7 +211,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="IP:" />
+            Text="City:" />
 
         <TextBlock
             Grid.Row="10"
@@ -220,7 +219,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.IP}" />
+            Text="{Binding Canary.City}" />
 
         <!--  Row 11  -->
         <TextBlock
@@ -229,7 +228,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="City:" />
+            Text="State:" />
 
         <TextBlock
             Grid.Row="11"
@@ -237,7 +236,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.City}" />
+            Text="{Binding Canary.State}" />
 
         <!--  Row 12  -->
         <TextBlock
@@ -246,7 +245,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="State:" />
+            Text="Country:" />
 
         <TextBlock
             Grid.Row="12"
@@ -254,7 +253,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.State}" />
+            Text="{Binding Canary.Country}" />
 
         <!--  Row 13  -->
         <TextBlock
@@ -263,7 +262,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Country:" />
+            Text="Zip:" />
 
         <TextBlock
             Grid.Row="13"
@@ -271,7 +270,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.Country}" />
+            Text="{Binding Canary.Zip}" />
 
         <!--  Row 14  -->
         <TextBlock
@@ -280,7 +279,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Zip:" />
+            Text="Coordinates:" />
 
         <TextBlock
             Grid.Row="14"
@@ -288,7 +287,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.Zip}" />
+            Text="{Binding Canary.Coordinates}" />
 
         <!--  Row 15  -->
         <TextBlock
@@ -297,7 +296,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Latitude:" />
+            Text="Access Info:" />
 
         <TextBlock
             Grid.Row="15"
@@ -305,7 +304,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.Latitude}" />
+            Text="{Binding Canary.AccessInfo}" />
 
         <!--  Row 16  -->
         <TextBlock
@@ -314,7 +313,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="Longitude:" />
+            Text="ASN Route:" />
 
         <TextBlock
             Grid.Row="16"
@@ -322,7 +321,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.Longitude}" />
+            Text="{Binding Canary.AsnRoute}" />
 
         <!--  Row 17  -->
         <TextBlock
@@ -331,7 +330,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="ASN Route:" />
+            Text="ASN Type:" />
 
         <TextBlock
             Grid.Row="17"
@@ -339,7 +338,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.AsnRoute}" />
+            Text="{Binding Canary.AsnType}" />
 
         <!--  Row 18  -->
         <TextBlock
@@ -348,7 +347,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="ASN Type:" />
+            Text="ASN Number:" />
 
         <TextBlock
             Grid.Row="18"
@@ -356,7 +355,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.AsnType}" />
+            Text="{Binding Canary.AsnNumber}" />
 
         <!--  Row 19  -->
         <TextBlock
@@ -365,7 +364,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="ASN Number:" />
+            Text="ASN Domain:" />
 
         <TextBlock
             Grid.Row="19"
@@ -373,7 +372,7 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.AsnNumber}" />
+            Text="{Binding Canary.AsnDomain}" />
 
         <!--  Row 20  -->
         <TextBlock
@@ -382,7 +381,7 @@
             Margin="5"
             HorizontalAlignment="Right"
             FontWeight="Bold"
-            Text="ASN Domain:" />
+            Text="ASN Name:" />
 
         <TextBlock
             Grid.Row="20"
@@ -390,28 +389,11 @@
             Margin="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="{Binding Canary.AsnDomain}" />
+            Text="{Binding Canary.AsnName}" />
 
         <!--  Row 21  -->
         <TextBlock
             Grid.Row="21"
-            Grid.Column="0"
-            Margin="5"
-            HorizontalAlignment="Right"
-            FontWeight="Bold"
-            Text="ASN Name:" />
-
-        <TextBlock
-            Grid.Row="21"
-            Grid.Column="1"
-            Margin="5"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="{Binding Canary.AsnName}" />
-
-        <!--  Row 22  -->
-        <TextBlock
-            Grid.Row="22"
             Grid.Column="0"
             Margin="5"
             HorizontalAlignment="Right"
@@ -420,7 +402,7 @@
             Text="Website:" />
 
         <Button
-            Grid.Row="22"
+            Grid.Row="21"
             Grid.Column="1"
             Margin="5"
             HorizontalAlignment="Left"

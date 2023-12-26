@@ -17,10 +17,10 @@ public partial class MainWindow
     private void RoundWindow()
     {
         // EVERYTHING AFTER THIS REFERS TO ROUNDED WINDOWS 11 WINDOWS
-        IntPtr hWnd = new WindowInteropHelper(GetWindow(this)).EnsureHandle();
+        var hWnd = new WindowInteropHelper(GetWindow(this)).EnsureHandle();
         DWMWINDOWATTRIBUTE attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
         DWM_WINDOW_CORNER_PREFERENCE preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-        DwmSetWindowAttribute(hWnd, attribute, ref preference, sizeof(uint));
+        _ = DwmSetWindowAttribute(hWnd, attribute, ref preference, sizeof(uint));
     }
 
     // The enum flag for DwmSetWindowAttribute's second parameter, which tells the function what attribute to set.

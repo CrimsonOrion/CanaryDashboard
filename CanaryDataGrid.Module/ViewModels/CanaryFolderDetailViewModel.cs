@@ -2,7 +2,7 @@
 
 using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 
 using System.Diagnostics;
 
@@ -11,7 +11,7 @@ public class CanaryFolderDetailViewModel : BindableBase, INavigationAware
 {
     #region Canary Folder Detail View Properties
 
-    private CanaryFolderModel _canary;
+    private CanaryFolderModel _canary = new();
     public CanaryFolderModel Canary
     {
         get => _canary;

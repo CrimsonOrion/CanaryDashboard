@@ -2,20 +2,21 @@
 
 namespace Canary_Dashboard.Core.Models;
 
-public class AsnModel
+public class Asn
 {
     [JsonPropertyName("route")]
-    public string Route { get; set; }
+    public string? Route { get; set; }
 
     [JsonPropertyName("type")]
-    public string Type { get; set; }
+    public string? Type { get; set; }
 
     [JsonPropertyName("asn")]
-    public string AsnNumber { get; set; }
+    public string? AutonomousSystemNumber { get; set; }
 
     [JsonPropertyName("domain")]
-    public string Domain { get; set; }
+    public string? Domain { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }
+
