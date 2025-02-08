@@ -57,9 +57,11 @@ public partial class App
             {
                 var name = _.Key;
                 IEnumerable<IConfigurationSection> values = _.GetChildren();
-                var auth = values.FirstOrDefault(_ => _.Key == "auth").Value;
-                var token = values.FirstOrDefault(_ => _.Key == "token").Value;
-                return new CanaryTokenConfigurationModel() { Name = name, Auth = auth, Token = token };
+                var auth = values.FirstOrDefault(_ => _.Key == "auth")
+                    ?? throw new("Auth was null for this call. Please add it to appsettings.");
+                var token = values.FirstOrDefault(_ => _.Key == "token")
+                    ?? throw new("Token was null for this call. Please add it to appsettings.");
+                return new CanaryTokenConfigurationModel() { Name = name, Auth = auth.Value, Token = token.Value };
             }));
     }
 

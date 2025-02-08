@@ -23,7 +23,8 @@ public class CanaryAPIProcessor : IAPIProcessor
             {
                 CanaryAlarm alarm = new()
                 {
-                    Name = canary.Name,
+                    Name = canary.Name
+                        ?? throw new Exception("Must supply Name in appsettings"),
                     Website = $@"https://canarytokens.org/history?token={canary.Token}&auth={canary.Auth}",
                     HitInformation = hit
                 };

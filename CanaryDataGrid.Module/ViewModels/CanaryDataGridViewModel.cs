@@ -101,13 +101,25 @@ public class CanaryDataGridViewModel(IRegionManager regionManager, IAPIProcessor
         switch (SelectedCanary.TokenType)
         {
             case "windows_dir":
-                Navigate(KnownViewNames.CanaryFolderDetailView, new() { { "canary", CanaryFolderList.FirstOrDefault(_ => _.ID == SelectedCanary.ID) } });
+                var folder = CanaryFolderList.FirstOrDefault(_ => _.ID == SelectedCanary.ID);
+                if (folder is not null)
+                {
+                    Navigate(KnownViewNames.CanaryFolderDetailView, new() { { "canary", folder } });
+                }
                 break;
             case "ms_excel":
-                Navigate(KnownViewNames.CanaryXlsxDetailView, new() { { "canary", CanaryXlsxList.FirstOrDefault(_ => _.ID == SelectedCanary.ID) } });
+                var xlsx = CanaryXlsxList.FirstOrDefault(_ => _.ID == SelectedCanary.ID);
+                if (xlsx is not null)
+                {
+                    Navigate(KnownViewNames.CanaryXlsxDetailView, new() { { "canary", xlsx } });
+                }
                 break;
             case "ms_word":
-                Navigate(KnownViewNames.CanaryDocxDetailView, new() { { "canary", CanaryDocxList.FirstOrDefault(_ => _.ID == SelectedCanary.ID) } });
+                var word = CanaryDocxList.FirstOrDefault(_ => _.ID == SelectedCanary.ID);
+                if (word is not null)
+                {
+                    Navigate(KnownViewNames.CanaryDocxDetailView, new() { { "canary", word } });
+                }
                 break;
             default:
                 break;

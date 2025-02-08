@@ -10,9 +10,9 @@
     <ApplicationIcon>CanaryThinkst.ico</ApplicationIcon>
     <Authors>James Lynch</Authors>
     <Company>Carteret-Craven Electric Cooperative</Company>
-    <Copyright>2022</Copyright>
+    <Copyright>2025</Copyright>
     <PackageIcon>ico_canary.png</PackageIcon>
-    <Version>2023.12.26.1</Version>
+    <Version>2025.2.8.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,9 +39,9 @@
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
-    <PackageReference Include="Prism.DryIoc" Version="9.0.271-pre" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
   </ItemGroup>
 
   <ItemGroup>
