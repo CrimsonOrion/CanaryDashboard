@@ -12,7 +12,7 @@
     <Company>Carteret-Craven Electric Cooperative</Company>
     <Copyright>2025</Copyright>
     <PackageIcon>ico_canary.png</PackageIcon>
-    <Version>2025.8.3.1</Version>
+    <Version>2025.9.29.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,9 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.7" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.11" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="6.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
     <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
   </ItemGroup>
 
